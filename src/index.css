@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -178,5 +177,21 @@
   .light .card-hover {
     @apply hover:shadow-tech-purple/20;
   }
-}
 
+  .section-bg {
+    background-image: url('/lovable-uploads/1d3b8309-9f37-4cb4-af12-559702e5ab61.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @apply relative;
+  }
+
+  .section-bg::before {
+    content: '';
+    @apply absolute inset-0 backdrop-blur-sm bg-black/30 dark:bg-black/60;
+  }
+
+  .light .section-bg::before {
+    @apply bg-white/30;
+  }
+}

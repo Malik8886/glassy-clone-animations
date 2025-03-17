@@ -109,8 +109,8 @@ const Services = () => {
   ];
 
   return (
-    <div className={`py-20 relative ${theme === 'light' ? 'light' : ''}`}>
-      <div className="container mx-auto px-4 md:px-6">
+    <div className={`py-20 section-bg relative ${theme === 'light' ? 'light' : ''}`}>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div 
           ref={titleRef}
           className="mb-16 opacity-0 translate-y-10 transition-all duration-700"
