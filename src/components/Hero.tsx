@@ -31,9 +31,9 @@ const Hero = () => {
   return (
     <div 
       ref={heroRef}
-      className={`min-h-screen w-full section-bg hero-grid pt-24 pb-16 opacity-0 transition-opacity duration-1000 ${theme === 'light' ? 'light' : ''}`}
+      className={`min-h-screen w-full hero-grid pt-24 pb-16 opacity-0 transition-opacity duration-1000 ${theme === 'light' ? 'light' : ''}`}
     >
-      <div className="container mx-auto px-4 md:px-6 h-full relative z-10">
+      <div className="container mx-auto px-4 md:px-6 h-full">
         <div className="flex flex-col md:flex-row items-center justify-between h-full">
           <div className="w-full md:w-1/2 mb-10 md:mb-0">
             <div className="max-w-xl space-y-6">

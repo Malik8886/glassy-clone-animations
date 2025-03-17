@@ -103,12 +103,12 @@ const Industries = () => {
   return (
     <div 
       ref={sectionRef}
-      className={`py-20 section-bg opacity-0 transition-opacity duration-1000 ${theme === 'light' ? 'light' : ''}`}
+      className={`py-20 ${theme === 'light' ? 'bg-gradient-to-br from-tech-purple/20 to-emerald-400/30 light' : 'bg-gradient-to-br from-emerald-500/60 to-green-400/60'} opacity-0 transition-opacity duration-1000`}
     >
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'} mb-4`}>Industries We Empower</h2>
-          <p className={`${theme === 'light' ? 'text-gray-700' : 'text-white/80'} text-lg max-w-2xl mx-auto`}>
+          <h2 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-black'} mb-4`}>Industries We Empower</h2>
+          <p className={`${theme === 'light' ? 'text-gray-700' : 'text-black/80'} text-lg max-w-2xl mx-auto`}>
             We provide cutting-edge solutions to transform and optimize various industries:
           </p>
         </div>
