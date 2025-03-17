@@ -1,6 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 
 interface ServiceCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,10 +39,10 @@ const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => 
   return (
     <div 
       ref={cardRef}
-      className="flex flex-col md:flex-row gap-6 md:gap-10 mb-16 opacity-0 translate-y-10 transition-all duration-700"
+      className={`flex flex-col md:flex-row gap-6 md:gap-10 mb-16 opacity-0 translate-y-10 transition-all duration-700 card-hover ${theme === 'light' ? 'light' : ''}`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
-      <div className="w-full md:w-1/3 glass-card overflow-hidden p-4 flex items-center justify-center aspect-square md:aspect-auto">
+      <div className={`w-full md:w-1/3 glass-card overflow-hidden p-4 flex items-center justify-center aspect-square md:aspect-auto ${theme === 'light' ? 'light' : ''}`}>
         <img 
           src={image} 
           alt={title} 
@@ -49,13 +51,13 @@ const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => 
       </div>
       
       <div className="w-full md:w-2/3 py-4">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
+        <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{title}</h3>
         
         <div className="flex items-start space-x-4">
-          <div className="mt-1 bg-tech-purple/30 rounded-full p-1">
-            <ChevronRight className="text-tech-purple h-5 w-5" />
+          <div className={`mt-1 ${theme === 'light' ? 'bg-tech-purple/30' : 'bg-tech-purple/30'} rounded-full p-1`}>
+            <ChevronRight className={`${theme === 'light' ? 'text-tech-purple' : 'text-tech-purple'} h-5 w-5`} />
           </div>
-          <p className="text-gray-300">{description}</p>
+          <p className={`${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>{description}</p>
         </div>
       </div>
     </div>
@@ -64,6 +66,7 @@ const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => 
 
 const Services = () => {
   const titleRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -106,14 +109,14 @@ const Services = () => {
   ];
 
   return (
-    <div className="py-20 relative">
+    <div className={`py-20 relative ${theme === 'light' ? 'light' : ''}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div 
           ref={titleRef}
           className="mb-16 opacity-0 translate-y-10 transition-all duration-700"
         >
-          <h2 className="text-tech-neon font-medium text-xl mb-4">// Services</h2>
-          <h3 className="text-3xl md:text-4xl font-bold">Our Professional Services</h3>
+          <h2 className={`${theme === 'light' ? 'text-tech-purple' : 'text-tech-neon'} font-medium text-xl mb-4`}>// Services</h2>
+          <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>Our Professional Services</h3>
         </div>
         
         <div className="space-y-8">

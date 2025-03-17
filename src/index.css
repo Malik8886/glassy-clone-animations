@@ -26,6 +26,50 @@
     --ring: 240 4.9% 83.9%;
     --radius: 0.5rem;
   }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+  }
 }
 
 @layer base {
@@ -39,9 +83,17 @@
   
   body {
     @apply bg-tech-dark text-foreground antialiased;
-    background: linear-gradient(to bottom, #050512, #080808);
+    background-image: url('/lovable-uploads/32f546ef-b869-4eb7-af29-3e0abb51c697.png');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
+    background-blend-mode: overlay;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  .light body {
+    @apply bg-white text-foreground;
+    background-blend-mode: soft-light;
   }
 }
 
@@ -53,6 +105,10 @@
   .glass-card {
     @apply bg-black/20 backdrop-blur-md border border-white/10 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300;
   }
+
+  .light .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-black/10;
+  }
   
   .text-gradient {
     @apply bg-gradient-to-r from-tech-purple to-tech-blue bg-clip-text text-transparent;
@@ -62,10 +118,19 @@
     @apply px-6 py-2 rounded-full bg-tech-neon text-black font-medium hover:bg-tech-neon/90 
     hover:shadow-[0_0_15px_rgba(0,255,140,0.5)] transition-all duration-300 ease-in-out;
   }
+
+  .light .btn-primary {
+    @apply bg-tech-purple text-white hover:bg-tech-purple/90 
+    hover:shadow-[0_0_15px_rgba(147,51,234,0.5)];
+  }
   
   .btn-secondary {
     @apply px-6 py-2 rounded-full bg-transparent border border-white/20 text-white font-medium 
     hover:bg-white/10 hover:border-white/30 transition-all duration-300 ease-in-out;
+  }
+
+  .light .btn-secondary {
+    @apply border-black/20 text-gray-800 hover:bg-black/5 hover:border-black/30;
   }
   
   .nav-link {
@@ -74,6 +139,10 @@
     after:bottom-0 after:left-0 after:bg-tech-neon after:origin-bottom-right 
     after:transition-transform after:duration-300 hover:after:scale-x-100 
     hover:after:origin-bottom-left;
+  }
+
+  .light .nav-link {
+    @apply text-gray-700 hover:text-black after:bg-tech-purple;
   }
   
   .hero-grid {
@@ -101,4 +170,13 @@
   .animate-delay-500 {
     animation-delay: 500ms;
   }
+
+  .card-hover {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-tech-neon/20;
+  }
+
+  .light .card-hover {
+    @apply hover:shadow-tech-purple/20;
+  }
 }
+

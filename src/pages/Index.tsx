@@ -5,8 +5,11 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Industries from '../components/Industries';
 import Footer from '../components/Footer';
+import { useTheme } from '../hooks/useTheme';
 
 const Index = () => {
+  const { theme } = useTheme();
+  
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.animate-on-scroll');
@@ -28,7 +31,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-tech-dark text-white overflow-x-hidden">
+    <div className={`min-h-screen ${theme === 'light' ? 'light' : ''} overflow-x-hidden`}>
       <Navbar />
       <Hero />
       <Services />
