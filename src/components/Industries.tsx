@@ -57,6 +57,7 @@ const IndustryCard = ({ image, index, title }: IndustryCardProps) => {
 
 const Industries = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
   
   useEffect(() => {
@@ -74,9 +75,17 @@ const Industries = () => {
       observer.observe(sectionRef.current);
     }
     
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
+      }
+      
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
       }
     };
   }, []);
@@ -106,8 +115,12 @@ const Industries = () => {
       className={`py-20 ${theme === 'light' ? 'bg-gradient-to-br from-tech-purple/20 to-emerald-400/30 light' : 'bg-gradient-to-br from-emerald-500/60 to-green-400/60'} opacity-0 transition-opacity duration-1000`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-black'} mb-4`}>Industries We Empower</h2>
+        <div 
+          ref={titleRef}
+          className="text-center mb-12 opacity-0 translate-y-10 transition-all duration-700"
+        >
+          <h2 className="service-gradient text-xl font-medium mb-4">// Industries</h2>
+          <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-black'} mb-4`}>Industries We Empower</h3>
           <p className={`${theme === 'light' ? 'text-gray-700' : 'text-black/80'} text-lg max-w-2xl mx-auto`}>
             We provide cutting-edge solutions to transform and optimize various industries:
           </p>

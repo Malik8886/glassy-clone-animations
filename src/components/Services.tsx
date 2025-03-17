@@ -54,8 +54,8 @@ const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => 
         <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{title}</h3>
         
         <div className="flex items-start space-x-4">
-          <div className={`mt-1 ${theme === 'light' ? 'bg-tech-purple/30' : 'bg-tech-purple/30'} rounded-full p-1`}>
-            <ChevronRight className={`${theme === 'light' ? 'text-tech-purple' : 'text-tech-purple'} h-5 w-5`} />
+          <div className={`mt-1 icon-gradient rounded-full p-1`}>
+            <ChevronRight className="text-white h-5 w-5" />
           </div>
           <p className={`${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>{description}</p>
         </div>
@@ -115,7 +115,7 @@ const Services = () => {
           ref={titleRef}
           className="mb-16 opacity-0 translate-y-10 transition-all duration-700"
         >
-          <h2 className={`${theme === 'light' ? 'text-tech-purple' : 'text-tech-neon'} font-medium text-xl mb-4`}>// Services</h2>
+          <h2 className="service-gradient font-medium text-xl mb-4">// Services</h2>
           <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>Our Professional Services</h3>
         </div>
         
