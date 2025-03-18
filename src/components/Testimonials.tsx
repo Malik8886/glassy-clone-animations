@@ -38,36 +38,27 @@ const TestimonialCard = ({ name, testimonial, image, position }: TestimonialCard
   return (
     <div 
       ref={cardRef}
-      className={`p-8 rounded-3xl bg-white/10 backdrop-blur-md opacity-0 translate-y-10 transition-all duration-700 ${
-        theme === 'light' ? 'bg-white/80 shadow-lg' : 'bg-white/10 backdrop-blur-md'
-      }`}
+      className="p-8 rounded-full bg-white opacity-0 translate-y-10 transition-all duration-700 flex items-center gap-6"
     >
-      <div className="flex gap-4 items-start">
-        <div className="flex-shrink-0 mt-1">
-          <div className="text-6xl text-gray-300 dark:text-gray-600">"</div>
+      {image && (
+        <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
+          <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
-        <div>
-          <p className={`mb-6 ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+      )}
+      <div className="flex-1">
+        <div className="relative">
+          <div className="absolute -top-10 -right-6 text-6xl text-gray-300">"</div>
+          <p className="text-gray-700 mb-6">
             {testimonial}
           </p>
-          
-          <div className="flex items-center gap-4">
-            {image && (
-              <div className="w-14 h-14 rounded-full overflow-hidden">
-                <img src={image} alt={name} className="w-full h-full object-cover" />
-              </div>
-            )}
-            <div>
-              <h4 className={`font-bold text-lg ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
-                {name}
-              </h4>
-              {position && (
-                <p className={`text-sm ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>
-                  {position}
-                </p>
-              )}
-            </div>
-          </div>
+          <h4 className="font-bold text-2xl text-gray-800">
+            {name}
+          </h4>
+          {position && (
+            <p className="text-gray-600">
+              {position}
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -76,7 +67,6 @@ const TestimonialCard = ({ name, testimonial, image, position }: TestimonialCard
 
 const Testimonials = () => {
   const titleRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,30 +94,31 @@ const Testimonials = () => {
     {
       name: "John Thomas",
       position: "CTO at TechFirm",
-      testimonial: "Lorem ipsum dolor sit amet consectetur. Mauris aliquam urna diam vulputate elit. Tortor suspendisse pretium in hendrerit tellus. Morbi aliquet diam magna a orare integer et eu. Quis enim mauris consequat et augue."
+      testimonial: "Lorem ipsum dolor sit amet consectetur. Mauris aliquam urna diam vulputat sed. Tortor suspendisse pretium in hendrerit tellus. Morbi aenean diam magna a ornare integer sit eu. Quis enim mauris consequat sit augue."
     }
   ];
 
   return (
-    <div className={`py-20 relative ${theme === 'light' ? 'light' : ''}`}>
+    <div className="py-20 relative bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div 
           ref={titleRef}
           className="mb-12 opacity-0 translate-y-10 transition-all duration-700"
         >
           <h2 className="service-gradient font-medium text-xl mb-4">// Testimonials</h2>
-          <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
+          <h3 className="text-3xl md:text-4xl font-bold text-white">
             What They Say About Us?
           </h3>
         </div>
         
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
               name={testimonial.name}
               position={testimonial.position}
               testimonial={testimonial.testimonial}
+              image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
             />
           ))}
         </div>

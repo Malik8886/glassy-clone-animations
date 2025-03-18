@@ -37,7 +37,7 @@ const IndustryCard = ({ image, index, title }: IndustryCardProps) => {
   return (
     <div 
       ref={cardRef}
-      className={`overflow-hidden rounded-lg opacity-0 translate-y-10 transition-all duration-700 card-hover ${theme === 'light' ? 'light' : ''}`}
+      className="overflow-hidden rounded-lg opacity-0 translate-y-10 transition-all duration-700"
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="relative">
@@ -47,9 +47,6 @@ const IndustryCard = ({ image, index, title }: IndustryCardProps) => {
           className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-          <h3 className={`p-4 text-xl font-bold ${theme === 'light' ? 'text-white' : 'text-white'}`}>{title}</h3>
-        </div>
       </div>
     </div>
   );
@@ -112,16 +109,15 @@ const Industries = () => {
   return (
     <div 
       ref={sectionRef}
-      className={`py-20 ${theme === 'light' ? 'bg-gradient-to-br from-purple-500/20 to-purple-400/20 light' : 'bg-gradient-to-br from-purple-600/30 to-purple-500/20'} opacity-0 transition-opacity duration-1000`}
+      className="py-20 bg-purple-900 opacity-0 transition-opacity duration-1000 relative overflow-hidden"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div 
           ref={titleRef}
           className="text-center mb-12 opacity-0 translate-y-10 transition-all duration-700"
         >
-          <h2 className="service-gradient text-xl font-medium mb-4">// Industries</h2>
-          <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'} mb-4`}>Industries We Empower</h3>
-          <p className={`${theme === 'light' ? 'text-gray-700' : 'text-white/80'} text-lg max-w-2xl mx-auto`}>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Industries We Empower</h3>
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             We provide cutting-edge solutions to transform and optimize various industries:
           </p>
         </div>
@@ -138,9 +134,15 @@ const Industries = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <button className="btn-primary bg-emerald-500 hover:bg-emerald-600 text-white">Get in touch with us</button>
+          <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-full uppercase tracking-wide text-sm">
+            Get in touch with us
+          </button>
         </div>
       </div>
+      
+      {/* Large circular decorations in the background */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-purple-800/50"></div>
+      <div className="absolute -bottom-60 -right-60 w-[500px] h-[500px] rounded-full bg-purple-800/50"></div>
     </div>
   );
 };
