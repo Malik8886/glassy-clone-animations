@@ -37,7 +37,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between h-full">
           <div className="w-full md:w-1/2 mb-10 md:mb-0">
             <div className="max-w-xl space-y-6">
-              <h2 className={`${theme === 'light' ? 'text-tech-purple' : 'text-tech-neon'} font-medium text-xl opacity-0 animate-fade-in animate-delay-100`}>
+              <h2 className="service-gradient font-medium text-xl opacity-0 animate-fade-in animate-delay-100">
                 // PROFESSIONAL SERVICES
               </h2>
               
