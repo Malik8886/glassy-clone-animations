@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 interface ServiceCardProps {
@@ -42,7 +42,7 @@ const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => 
       className={`flex flex-col md:flex-row gap-6 md:gap-10 mb-16 opacity-0 translate-y-10 transition-all duration-700 card-hover ${theme === 'light' ? 'light' : ''}`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
-      <div className={`w-full md:w-1/3 glass-card overflow-hidden p-4 flex items-center justify-center aspect-square md:aspect-auto ${theme === 'light' ? 'light' : ''}`}>
+      <div className={`w-full md:w-1/3 glass-card overflow-hidden p-6 flex items-center justify-center aspect-square md:aspect-auto rounded-xl ${theme === 'light' ? 'light' : ''}`}>
         <img 
           src={image} 
           alt={title} 
@@ -54,8 +54,8 @@ const ServiceCard = ({ title, description, image, index }: ServiceCardProps) => 
         <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{title}</h3>
         
         <div className="flex items-start space-x-4">
-          <div className={`mt-1 icon-gradient rounded-full p-1`}>
-            <ChevronRight className="text-white h-5 w-5" />
+          <div className={`mt-1 rounded-full p-1`}>
+            <CheckCircle className="text-emerald-400 h-5 w-5" />
           </div>
           <p className={`${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>{description}</p>
         </div>

@@ -70,43 +70,41 @@ const Hero = () => {
               
               <div className={`flex flex-wrap gap-4 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-400' : 'opacity-0'}`}>
                 <button className="btn-primary">SEE OUR WORK</button>
-                <button className="btn-secondary">STACK EXCHANGE</button>
+                <button className="btn-secondary">EXPLORE</button>
               </div>
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 h-[400px] md:h-[500px] relative grid grid-cols-2 gap-4">
+          <div className="w-full md:w-1/2 h-[400px] md:h-[500px] relative grid grid-cols-3 gap-4">
+            <div className="col-span-2 h-1/2 overflow-hidden rounded-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" 
+                alt="Circuit board"
+                className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-200' : 'opacity-0'}`}
+              />
+            </div>
             <div className="h-full flex flex-col gap-4">
-              <div className={`overflow-hidden rounded-lg h-1/2 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-200' : 'opacity-0'}`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070" 
-                  alt="Circuit board"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className={`overflow-hidden rounded-lg h-1/2 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-300' : 'opacity-0'}`}>
+              <div className="h-1/2 overflow-hidden rounded-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2070" 
                   alt="IoT Connectivity"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-300' : 'opacity-0'}`}
                 />
               </div>
-            </div>
-            <div className="h-full flex flex-col gap-4">
-              <div className={`overflow-hidden rounded-lg h-3/5 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-400' : 'opacity-0'}`}>
+              <div className="h-1/2 overflow-hidden rounded-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?q=80&w=1936" 
                   alt="Digital network"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-400' : 'opacity-0'}`}
                 />
               </div>
-              <div className={`overflow-hidden rounded-lg h-2/5 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-500' : 'opacity-0'}`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069" 
-                  alt="Developer coding"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            </div>
+            <div className="col-span-2 h-1/2 overflow-hidden rounded-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069" 
+                alt="Developer coding"
+                className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${isVisible ? 'opacity-100 animate-fade-in animate-delay-500' : 'opacity-0'}`}
+              />
             </div>
           </div>
         </div>

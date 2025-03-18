@@ -92,19 +92,19 @@ const Industries = () => {
 
   const industries = [
     {
-      title: "Fintech Solutions",
+      title: "Sustainable Agriculture",
       image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2032"
     },
     {
-      title: "Healthcare Technology",
+      title: "Automotive Technology",
       image: "https://images.unsplash.com/photo-1611266359650-bb0805095c3b?q=80&w=1974"
     },
     {
-      title: "Smart Manufacturing",
+      title: "Renewable Energy",
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1972"
     },
     {
-      title: "Sustainable Energy",
+      title: "Smart Cities",
       image: "https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=1974"
     }
   ];
@@ -112,7 +112,7 @@ const Industries = () => {
   return (
     <div 
       ref={sectionRef}
-      className={`py-20 ${theme === 'light' ? 'bg-gradient-to-br from-tech-purple/20 to-emerald-400/30 light' : 'bg-gradient-to-br from-emerald-500/60 to-green-400/60'} opacity-0 transition-opacity duration-1000`}
+      className={`py-20 ${theme === 'light' ? 'bg-gradient-to-br from-purple-500/20 to-purple-400/20 light' : 'bg-gradient-to-br from-purple-600/30 to-purple-500/20'} opacity-0 transition-opacity duration-1000`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div 
@@ -120,8 +120,8 @@ const Industries = () => {
           className="text-center mb-12 opacity-0 translate-y-10 transition-all duration-700"
         >
           <h2 className="service-gradient text-xl font-medium mb-4">// Industries</h2>
-          <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-black'} mb-4`}>Industries We Empower</h3>
-          <p className={`${theme === 'light' ? 'text-gray-700' : 'text-black/80'} text-lg max-w-2xl mx-auto`}>
+          <h3 className={`text-3xl md:text-4xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-white'} mb-4`}>Industries We Empower</h3>
+          <p className={`${theme === 'light' ? 'text-gray-700' : 'text-white/80'} text-lg max-w-2xl mx-auto`}>
             We provide cutting-edge solutions to transform and optimize various industries:
           </p>
         </div>
@@ -135,6 +135,10 @@ const Industries = () => {
               title={industry.title}
             />
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <button className="btn-primary bg-emerald-500 hover:bg-emerald-600 text-white">Get in touch with us</button>
         </div>
       </div>
     </div>
