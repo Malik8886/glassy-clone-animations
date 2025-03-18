@@ -38,7 +38,7 @@ const TestimonialCard = ({ name, testimonial, image, position }: TestimonialCard
   return (
     <div 
       ref={cardRef}
-      className="p-8 rounded-full bg-white opacity-0 translate-y-10 transition-all duration-700 flex items-center gap-6"
+      className="p-8 rounded-[40px] bg-white opacity-0 translate-y-10 transition-all duration-700 flex items-center gap-6"
     >
       {image && (
         <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
@@ -47,7 +47,7 @@ const TestimonialCard = ({ name, testimonial, image, position }: TestimonialCard
       )}
       <div className="flex-1">
         <div className="relative">
-          <div className="absolute -top-10 -right-6 text-6xl text-gray-300">"</div>
+          <div className="absolute top-0 right-0 text-6xl text-gray-300">"</div>
           <p className="text-gray-700 mb-6">
             {testimonial}
           </p>
@@ -99,7 +99,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="py-20 relative bg-gray-900">
+    <div className="py-20 relative bg-[#222222] rounded-t-[80px]">
       <div className="container mx-auto px-4 md:px-6">
         <div 
           ref={titleRef}
