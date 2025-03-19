@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
@@ -30,19 +36,19 @@ const Navbar = () => {
       } ${theme === 'light' ? 'light' : ''}`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-1">
+        <Link to="/" className="flex items-center gap-1">
           <span className={`${theme === 'light' ? 'text-tech-purple' : 'text-tech-purple'} font-bold text-2xl`}>LO</span>
           <span className={`${theme === 'light' ? 'text-black' : 'text-white'} font-bold text-2xl`}>GO</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#services" className="nav-link">Skills</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#team" className="nav-link">Team</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <Link to="/" className={`nav-link ${isActive('/') ? 'after:scale-x-100' : ''}`}>Home</Link>
+          <Link to="/#about" className="nav-link">About</Link>
+          <Link to="/#services" className="nav-link">Skills</Link>
+          <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'after:scale-x-100' : ''}`}>Projects</Link>
+          <Link to="/#team" className="nav-link">Team</Link>
+          <Link to="/#contact" className="nav-link">Contact</Link>
         </div>
         
         <div className="hidden md:flex items-center space-x-4">
@@ -87,12 +93,12 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 flex flex-col space-y-4">
-          <a href="#" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Home</a>
-          <a href="#about" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>About</a>
-          <a href="#services" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Skills</a>
-          <a href="#projects" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Projects</a>
-          <a href="#team" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Team</a>
-          <a href="#contact" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Contact</a>
+          <Link to="/" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Home</Link>
+          <Link to="/#about" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>About</Link>
+          <Link to="/#services" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Skills</Link>
+          <Link to="/projects" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Projects</Link>
+          <Link to="/#team" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Team</Link>
+          <Link to="/#contact" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Contact</Link>
           <button className="btn-primary self-start my-2">LET'S TALK</button>
         </div>
       </div>
