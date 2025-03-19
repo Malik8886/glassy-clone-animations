@@ -51,8 +51,8 @@ const Projects = () => {
     <div className={`min-h-screen ${theme === 'light' ? 'light' : ''}`}>
       <Navbar />
       
-      {/* Hero Section with Purple Wave */}
-      <div className="bg-tech-purple h-[200px] relative overflow-hidden">
+      {/* Hero Section with Purple Background */}
+      <div className="bg-[#9b87f5] h-[200px] relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full">
           <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
             <path 
@@ -116,13 +116,13 @@ const Projects = () => {
         </div>
       </div>
       
-      {/* Team Section with Image */}
+      {/* Tech Image Section */}
       <div className="bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <img 
-              src="/lovable-uploads/ec8f4a41-7c5d-4d0e-9d33-f169823be8e8.png" 
-              alt="Team collaboration"
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+              alt="Technology circuit board"
               className="w-full h-auto"
             />
           </div>
