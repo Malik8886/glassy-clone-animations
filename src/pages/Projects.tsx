@@ -14,7 +14,7 @@ const ProjectItem = ({ className, style }: { className?: string, style?: React.C
       <div className="aspect-square relative">
         <div className="w-full h-full bg-white/20 rounded-xl overflow-hidden">
           <img 
-            src="/placeholder.svg" 
+            src={`https://images.unsplash.com/photo-${Math.random() > 0.5 ? '1488590528505-98d2b5aba04b' : '1487058792275-0ad4aaf24ca7'}?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`}
             alt="Project" 
             className="w-full h-full object-cover"
           />
@@ -51,16 +51,9 @@ const Projects = () => {
     <div className={`min-h-screen ${theme === 'light' ? 'light' : ''}`}>
       <Navbar />
       
-      {/* Hero Section with Purple Background */}
-      <div className="bg-[#9b87f5] h-[200px] relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-full">
-          <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-            <path 
-              fill="#000000" 
-              d="M0,192L60,186.7C120,181,240,171,360,170.7C480,171,600,181,720,176C840,171,960,149,1080,149.3C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
+      {/* Simple Purple Box Header */}
+      <div className="bg-[#9b87f5] h-[200px] flex items-center justify-center">
+        <h1 className="text-4xl font-bold text-white">Our Projects</h1>
       </div>
       
       {/* Projects Section */}
@@ -116,17 +109,13 @@ const Projects = () => {
         </div>
       </div>
       
-      {/* Tech Image Section */}
-      <div className="bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
-            <img 
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-              alt="Technology circuit board"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
+      {/* Full-width Tech People Working Image */}
+      <div className="w-full">
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
+          alt="Tech team working together"
+          className="w-full h-auto object-cover"
+        />
       </div>
       
       <Footer />
