@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Industries from '../components/Industries';
-import Projects from '../components/Projects';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import { useTheme } from '../hooks/useTheme';
@@ -38,7 +37,6 @@ const Index = () => {
       <Hero />
       <Services />
       <Industries />
-      <Projects />
       <Testimonials />
       <Footer />
     </div>
