@@ -161,7 +161,7 @@ const AboutUs = () => {
             ref={whyChooseRef}
             className="max-w-4xl mx-auto opacity-0 translate-y-10 transition-all duration-700"
           >
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-[#9b87f5]">Why Choose Us?</h2>
             
             <div className="space-y-12">
               {/* Feature 1 */}
@@ -170,7 +170,7 @@ const AboutUs = () => {
                   <Layers className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">End-To-End Expertise</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#9b87f5]">End-To-End Expertise</h3>
                   <p className="text-gray-400">
                     From strategy development to AI implementation, we combine decades of expertise with your business goals.
                   </p>
@@ -183,7 +183,7 @@ const AboutUs = () => {
                   <Wand2 className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">Tailored Solutions</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#9b87f5]">Tailored Solutions</h3>
                   <p className="text-gray-400">
                     We design bespoke solutions for specific marketplace, strategy, or quality attributes that help you exceed customer needs.
                   </p>
@@ -196,7 +196,7 @@ const AboutUs = () => {
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">Unmatched Security & Compliance</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#9b87f5]">Unmatched Security & Compliance</h3>
                   <p className="text-gray-400">
                     Military-level development standards, end-to-end encryptions, and meticulous testing at global standards.
                   </p>
@@ -219,7 +219,7 @@ const AboutUs = () => {
             className="max-w-4xl mx-auto opacity-0 translate-y-10 transition-all duration-700"
           >
             <div className="text-[#9b87f5] font-medium mb-4">// Testimonials</div>
-            <h2 className="text-3xl font-bold mb-12">What They Say About Us?</h2>
+            <h2 className="text-3xl font-bold mb-12 text-[#9b87f5]">What They Say About Us?</h2>
             
             <div className="bg-white text-black rounded-xl p-8 relative">
               <div className="flex flex-col md:flex-row gap-6 items-center">
