@@ -116,12 +116,12 @@ const AboutUs = () => {
         </div>
       </div>
       
-      {/* Success Story Section */}
+      {/* Success Story Section - Updated with huge radius on top right */}
       <div className="bg-black text-white pb-24 relative">
         <div className="container mx-auto px-4 md:px-6">
           <div 
             ref={storyRef}
-            className="relative bg-white rounded-t-[60px] pt-16 pb-24 px-8 md:px-12 opacity-0 translate-y-10 transition-all duration-700"
+            className="relative bg-white rounded-tr-[120px] pt-16 pb-24 px-8 md:px-12 opacity-0 translate-y-10 transition-all duration-700"
           >
             <div className="text-[#9b87f5] font-medium mb-6">// Success Story</div>
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-8">
