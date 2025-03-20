@@ -51,7 +51,7 @@ const AboutUs = () => {
       {/* Hero Section with Purple Background */}
       <div className="bg-[#6E59A5] relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 py-20 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white text-center mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
             ABOUT US
           </h1>
         </div>
@@ -94,22 +94,22 @@ const AboutUs = () => {
           {/* Stats Section */}
           <div 
             ref={statsRef}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 opacity-0 translate-y-10 transition-all duration-700"
+            className="grid grid-cols-4 gap-6 py-10 opacity-0 translate-y-10 transition-all duration-700"
           >
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">20+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">20+</div>
               <div className="text-gray-400 text-sm">Project Done</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">10+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">10+</div>
               <div className="text-gray-400 text-sm">Our Team</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">135+</div>
-              <div className="text-gray-400 text-sm">Reviews</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">135+</div>
+              <div className="text-gray-400 text-sm">Reviewed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">100+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">100+</div>
               <div className="text-gray-400 text-sm">Happy Client</div>
             </div>
           </div>
@@ -117,40 +117,66 @@ const AboutUs = () => {
       </div>
       
       {/* Success Story Section */}
-      <div className="bg-black text-white pb-24 relative">
+      <div className="bg-black text-white pb-16 relative">
         <div className="container mx-auto px-4 md:px-6">
           <div 
             ref={storyRef}
-            className="relative bg-white rounded-t-[60px] pt-16 pb-24 px-8 md:px-12 opacity-0 translate-y-10 transition-all duration-700"
+            className="relative bg-black pt-16 pb-24 px-8 md:px-12 opacity-0 translate-y-10 transition-all duration-700"
           >
             <div className="text-[#9b87f5] font-medium mb-6">// Success Story</div>
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
               Our Journey To Become The Leading AI And Web Development Agency.
             </h2>
-            <div className="w-full h-px bg-gray-200 mb-8"></div>
+            <div className="w-full h-px bg-gray-800 mb-8"></div>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-black mb-4">2025 - Become Rapidly Growing</h3>
-                <p className="text-gray-700">
-                  Our journey to becoming a leader in the AI and Development Agency has been one of
-                  dedication, innovation, and continuous growth. Starting as a small team with a big vision,
-                  we have grown from a talented team in the industry, delivering cutting-edge solutions to
+                <h3 className="text-xl font-bold text-white mb-4">2025 - Become Rapidly Growing</h3>
+                <p className="text-gray-400">
+                  Our journey to becoming a leading AI and Web Development Agency has been one of
+                  passion, innovation, and relentless dedication. What started as a small team with a big vision
+                  has grown into a trusted name in the industry, delivering cutting-edge digital solutions to
                   businesses worldwide.
                 </p>
               </div>
             </div>
             
-            {/* Green circle decoration */}
-            <div className="absolute bottom-12 right-12">
-              <div className="relative w-24 h-24">
-                <div className="absolute inset-0 rounded-full border-2 border-emerald-400 animate-pulse-slow"></div>
-                <div className="absolute inset-2 rounded-full border-2 border-emerald-400 opacity-50"></div>
-                <div className="absolute inset-4 rounded-full border-2 border-emerald-400 opacity-30"></div>
-                <div className="absolute inset-6 rounded-full border-2 border-emerald-400 opacity-10"></div>
+            {/* Image Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+              <div className="aspect-video bg-gray-800 rounded-xl overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Team collaboration"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-video bg-gray-800 rounded-xl overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Team working"
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Circle decoration */}
+                <div className="absolute bottom-4 right-4">
+                  <div className="w-20 h-20 rounded-full bg-[#00ff8c] flex items-center justify-center text-xs text-black font-medium p-1">
+                    <div className="w-full h-full rounded-full border border-black flex items-center justify-center">
+                      <div className="text-center leading-tight">
+                        RAPIDLY<br/>GROWING
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* White curve separator */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-24">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V100S111.83,30,321.39,56.44Z" fill="white" opacity="0.1"></path>
+          </svg>
         </div>
       </div>
       
@@ -166,39 +192,42 @@ const AboutUs = () => {
             <div className="space-y-12">
               {/* Feature 1 */}
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-lg bg-[#9b87f5] flex items-center justify-center flex-shrink-0">
-                  <Layers className="w-6 h-6 text-white" />
+                <div className="w-16 h-16 rounded-lg bg-[#9b87f5] flex items-center justify-center flex-shrink-0">
+                  <Layers className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3">End-To-End Expertise</h3>
                   <p className="text-gray-400">
-                    From strategy development to AI implementation, we combine decades of expertise with your business goals.
+                    From device integration to AI-driven analytics, we architect scalable
+                    IoT ecosystems that grow with your business.
                   </p>
                 </div>
               </div>
               
               {/* Feature 2 */}
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-lg bg-[#9b87f5] flex items-center justify-center flex-shrink-0">
-                  <Wand2 className="w-6 h-6 text-white" />
+                <div className="w-16 h-16 rounded-lg bg-[#9b87f5] flex items-center justify-center flex-shrink-0">
+                  <Wand2 className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3">Tailored Solutions</h3>
                   <p className="text-gray-400">
-                    We design bespoke solutions for specific marketplace, strategy, or quality attributes that help you exceed customer needs.
+                    We design bespoke systems for predictive maintenance, energy
+                    efficiency, or real-time insights—no cookie-cutter fixes.
                   </p>
                 </div>
               </div>
               
               {/* Feature 3 */}
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-lg bg-[#9b87f5] flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-white" />
+                <div className="w-16 h-16 rounded-lg bg-[#9b87f5] flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3">Unmatched Security & Compliance</h3>
                   <p className="text-gray-400">
-                    Military-level development standards, end-to-end encryptions, and meticulous testing at global standards.
+                    Sleep easy with enterprise-grade encryption, zero-trust frameworks,
+                    and adherence to global standards.
                   </p>
                 </div>
               </div>
@@ -212,7 +241,7 @@ const AboutUs = () => {
       </div>
       
       {/* Testimonials Section */}
-      <div className="bg-black text-white py-16">
+      <div className="bg-[#222222] text-white py-16 rounded-t-[40px]">
         <div className="container mx-auto px-4 md:px-6">
           <div 
             ref={testimonialsRef}
@@ -221,23 +250,22 @@ const AboutUs = () => {
             <div className="text-[#9b87f5] font-medium mb-4">// Testimonials</div>
             <h2 className="text-3xl font-bold mb-12">What They Say About Us?</h2>
             
-            <div className="bg-white text-black rounded-xl p-8 relative">
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                    alt="Client" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-gray-700 mb-4">
-                    "Extraordinary service, extraordinary results! Our project was delivered with surgical precision and attention to detail. Their talent in our business sector is top-notch. They listened, advised, and executed flawlessly."
-                  </p>
-                  <div className="font-bold">— Sarah L. Operations Manager</div>
-                  <div className="text-gray-500">At DataPro</div>
-                </div>
+            <div className="bg-white text-black rounded-3xl p-8 relative flex gap-6">
+              <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
+                  alt="Client" 
+                  className="w-full h-full object-cover"
+                />
               </div>
+              <div>
+                <p className="text-gray-700 mb-4">
+                  "Outstanding service and exceptional results! The team developed a sleek, responsive website for our business, tailored perfectly to our needs. Their attention to detail, fast turnaround."
+                </p>
+                <div className="font-bold">— Sarah L., Operations Manager</div>
+                <div className="text-gray-500">At DataPro</div>
+              </div>
+              <div className="absolute top-6 right-6 text-gray-300 text-6xl font-serif">"</div>
             </div>
           </div>
         </div>
