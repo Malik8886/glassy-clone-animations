@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className={`nav-link ${isActive('/') ? 'after:scale-x-100' : ''}`}>Home</Link>
-          <Link to="/#about" className="nav-link">About</Link>
+          <Link to="/about" className={`nav-link ${isActive('/about') ? 'after:scale-x-100' : ''}`}>About</Link>
           <Link to="/#services" className="nav-link">Skills</Link>
           <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'after:scale-x-100' : ''}`}>Projects</Link>
           <Link to="/#team" className="nav-link">Team</Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 flex flex-col space-y-4">
           <Link to="/" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Home</Link>
-          <Link to="/#about" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>About</Link>
+          <Link to="/about" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>About</Link>
           <Link to="/#services" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Skills</Link>
           <Link to="/projects" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Projects</Link>
           <Link to="/#team" className={`${theme === 'light' ? 'text-gray-800' : 'text-white'} py-2 px-4 hover:bg-white/5 rounded`}>Team</Link>
